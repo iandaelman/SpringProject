@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class User {
+public class Character {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -17,10 +17,10 @@ public class User {
     @OneToMany
     private List<Weapon> weapons;
 
-    protected User() {
+    protected Character() {
     }
 
-    public User(String name, int age, ArrayList<Weapon> weapons) {
+    public Character(String name, int age, ArrayList<Weapon> weapons) {
         this.name = name;
         this.age = age;
         this.weapons = weapons;
