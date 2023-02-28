@@ -1,9 +1,9 @@
 package com.example.dndproject.persistentie;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class User {
@@ -14,13 +14,16 @@ public class User {
     private String name;
 
     private int age;
+    @OneToMany
+    private List<Weapon> weapons;
 
     protected User() {
     }
 
-    public User(String name, int age) {
+    public User(String name, int age, ArrayList<Weapon> weapons) {
         this.name = name;
         this.age = age;
+        this.weapons = weapons;
     }
 
     public void setId(Long id) {
